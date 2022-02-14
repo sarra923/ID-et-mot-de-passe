@@ -1,0 +1,21 @@
+h2{
+    color:#9e11a3;
+}
+
+
+body{
+    background-color:#2cc051 ;
+
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 400px;
+    height: 200px;
+    margin-left: -250px;
+    margin-top: -100px;
+    color: palegreen;
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+
+}

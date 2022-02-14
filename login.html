@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Interactive Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+<form class = "box" action = "login.html">
+
+    <h1> Authentification</h1>
+    <label>Identifiant:</label>
+    <input type = "text" name= "username" placeholder="Entrer votre identifiant" id="username">
+    <label>Mot de passe:</label>
+    <input type = "password" name= "password" placeholder="Entrer votre mot de passe" id="password"maxlength="8" required>
+
+	<button type = "reset">Effacer</button>
+                        <button type="button" onclick="getInfo(this.form)">Connexion</button>
+    
+</form>
+
+<p style="color: #f8f8f8" id="resultat"></p>
+</section>
+
+</body>
+<script>
+   cpt = 0;
+    var objPeople = [
+    {
+		username: "ID0",
+		password: "00000000"
+	},
+
+	{
+		username: "ID1",
+		password: "11111111"
+	},
+
+	{
+		username: "ID2",
+		password: "22222222"
+	},
+
+	{
+		username: "ID3",
+		password: "33333333"
+	},
+
+	{
+		username: "ID4",
+		password: "44444444"
+	}
+
+	]
+
+    function getInfo() {
+
+    var username = document.getElementById('username').value
+	var password = document.getElementById('password').value
+	
+	for (var i = 0; i < objPeople.length; i++) {
+		if(username == objPeople[i].username && password == objPeople[i].password) {
+			alert("BRAVO! Tu as réussies à te connecter");
+			window.location.href = "reussie.html";
+			return
+		}
+	}
+	cpt ++;
+	alert("Ton identification a été refusée, il ne vous reste que " + (3-cpt) + " tentative(s)");
+	document.getElementById('username').value="";
+	document.getElementById('password').value="";
+	if (cpt > 2) {
+		alert("DOMMAGE ! Le nombre de tentatives de connexion maximum a été atteint !");
+		window.location.href = "echec.html";
+			return
+	}
+}
+</script>
+</html>
